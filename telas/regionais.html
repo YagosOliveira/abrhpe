@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - ABRH-PE</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <script src="https://kit.fontawesome.com/58094354f5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+          <a href="/index.html">
+              <img src="/img/PE_ABRH.png" alt="Logo ABRH-PE">
+          </a>
+      </div>
+      <ul class="menu">
+          <li class="dropdown">
+              <a href="#" id="abrh-toggle">ABRH-PE <i class="fa-solid fa-chevron-down"></i></a>
+              <ul class="submenu" id="abrh-submenu">
+                  <li><a href="/telas/sobre.html">Quem Somos</a></li>
+                  <li><a href="/telas/diretoria.html">Diretoria</a></li>
+                  <!--<li><a href="#">Parceiros</a></li>-->
+              </ul>
+          </li>
+          <li><a href="#">Agenda</a></li>
+          <li><a href="/telas/regionais.html">Regionais</a></li>
+          <li><a href="/noticias.html">Notícias</a></li>
+      </ul>
+      <a href="https://www.abrhbrasil.org.br/associativismo/seccional-pernambuco/" target="_blank">
+          <button class="btn">
+            Seja um associado <i class="fa-solid fa-chevron-right"></i>
+          </button>
+      </a>
+  </nav>
+
+    <div class="imagem-destaque">
+        <img src="../img/8.jpg" alt="Imagem destaque">
+        <h1>Regionais ABRH-PE</h1>
+        <p>A ABRH-PE conta com regionais que atuam em diversas áreas, promovendo eventos e iniciativas que fortalecem a gestão de pessoas e o desenvolvimento profissional.</p>
+    </div>
+
+    <section class="regionais">
+        <div class="conteudo">
+            
+        </div>
+        <div class="regionais-cards">
+        <div class="card-regional" onclick="abrirPopup2()">
+          <img src="../img/caruaru.jpeg" alt="Regional Caruaru">
+          <div class="card-conteudo">
+            <h3>Regional Garanhuns</h3>
+            <a>Conhecer diretoria <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+        </div>
+
+
+          <!-- Modal oculto -->
+          <div id="popup1" class="popup-overlay" onclick="fecharPopup(event)">
+            <div class="popup-content">
+              <img src="../img/diretorPetrolina.jpeg" alt="Imagem da Regional">
+              <div class="texto-popup">
+                <div class="info-regional">
+                  <h2>Osvaldo Souza</h2>
+                  <h4>Diretor Regional de Petrolina.</h4>
+                  <p>"Como diretor da ABRH-PE em Petrolina, acredito que a diversidade não é apenas um valor — é uma estratégia de futuro."</p>
+                </div>
+                <button class="contato-regional"><i class="fas fa-phone-alt"></i></button>
+              </div>
+            </div>
+          </div>
+      
+          <div class="card-regional" onclick="abrirPopup()">
+            <img src="../img/petrolina.jpg" alt="Regional Caruaru">
+            <div class="card-conteudo">
+              <h3>Regional Petrolina</h3>
+              <a>Conhecer diretoria <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Modal oculto -->
+           <div id="popup2" class="popup-overlay" onclick="fecharPopup(event)">
+            <div class="popup-content">
+              <img src="../img/diretoraRegional.jpeg" alt="Imagem da Regional">
+              <div class="texto-popup">
+                <div class="info-regional">
+                  <h2>Virgínia Spinassé</h2>
+                  <h4>Diretora Regional de Garanhuns.</h4>
+                  <p>"Sem gente nada acontece! A ABRH-PE em Garanhuns ajudará os gestores a desenvolver essa gente que faz o sucesso das organizações."</p>
+                </div>
+                <button class="contato-regional"><i class="fas fa-phone-alt"></i></button>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+        </div>
+      </section>
+      <script>
+        function abrirPopup() {
+          document.getElementById('popup1').classList.add('active');
+        }
+        function abrirPopup2() {
+          document.getElementById('popup2').classList.add('active');
+        }
+
+        function fecharPopup(event){ 
+          // Fecha se clicar fora do conteúdo
+          if (event.target.id === 'popup1') {
+            document.getElementById('popup1').classList.remove('active');}
+          else if (event.target.id === 'popup2') {
+            document.getElementById('popup2').classList.remove('active');
+          }
+        }
+      </script>
+
+<footer>
+  <div class="footer-top">
+      <img src="/img/PE_ABRH.png" alt="ABRH-PE" class="logo-footer">
+      <div class="footer-links">
+          <div>
+              <p><strong>Sobre nós</strong></p>
+              <p><a href="#">Contato</a></p>
+              <p><a href="https://www.abrhbrasil.org.br/associativismo/seccional-pernambuco/">Associe-se</a></p>
+          </div>
+          <div>
+              <p><strong>Eventos</strong></p>
+              <p><a href="#">Projetos</a></p>
+              <p><a href="/telas/regionais.html">Regionais</a></p>
+          </div>
+          <div>
+              <p><strong>Dúvidas Frequentes</strong></p>
+              <p><a href="/telas/sobre.html">Quem somos</a></p>
+              <p><a href="#">Política de Privacidade</a></p>
+          </div>
+      </div>
+      <div class="footer-social">
+          <a href="https://www.instagram.com/abrhpe/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/abrhpe/?originalSubdomain=br" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="" target="_blank"><button class="btn-footer">Seja Um Patrocinador</button></a>
+      </div>
+
+      <div class="footer-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.5406517097877!2d-34.892857124246596!3d-8.046200480365401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18f1f9eb59fb%3A0x5b0b933375e3e520!2sABRH%20PE!5e0!3m2!1spt-BR!2sus!4v1743797470292!5m2!1spt-BR!2sus" 
+              width="300" height="170" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>© 2025 ABRH-PE. Todos os direitos reservados.</p>
+      <p>Desenvolvido por: <img src="/img/LogoVortexBranca.png" alt="VORTEX TECH" class="VORTEX-logo"></p>
+  </div>
+</footer>
+<!-- Modal de Contato -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Entre em contato conosco</h2>
+      <p>
+          Pelo telefone ou WhatsApp:
+          <i class="fas fa-phone-alt"></i>
+          <a href="https://wa.me/5581988657717" target="_blank">(81) 98865-7717</a>
+      </p>
+      <p>
+          Pelo email:
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:pe.abrh@gmail.com">pe.abrh@gmail.com</a>
+      </p>
+
+  </div>
+</div>
+<script>
+// Abrir o modal
+document.querySelectorAll('a').forEach(link => {
+  if (link.textContent.trim() === 'Contato') {
+      link.addEventListener('click', function(event) {
+          event.preventDefault();
+          document.getElementById('contactModal').style.display = 'block';
+      });
+  }
+});
+
+// Fechar o modal
+document.querySelector('.close').addEventListener('click', function () {
+  document.getElementById('contactModal').style.display = 'none';
+});
+
+window.addEventListener('click', function (event) {
+  if (event.target === document.getElementById('contactModal')) {
+      document.getElementById('contactModal').style.display = 'none';
+  }
+});
+
+
+</script>
+</body>
+</html>      

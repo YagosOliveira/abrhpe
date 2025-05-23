@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Administrativo</title>
+  <link rel="stylesheet" href="/style-alter.css">
+</head>
+<body>
+  <h1>Painel Administrativo</h1>
+  <form id="form-noticia" enctype="multipart/form-data">
+    <label for="titulo">Título:</label><br>
+    <input type="text" id="titulo" name="titulo" required><br><br>
+
+    <label for="conteudo">Conteúdo:</label><br>
+    <textarea id="conteudo" name="conteudo" rows="6" required></textarea><br><br>
+
+    <label for="imagem">Imagem:</label><br>
+    <input type="file" id="imagem" name="imagem" accept="image/*" required><br><br>
+
+    <button type="submit">Adicionar Notícia</button>
+  </form>
+
+  <p id="mensagem"></p>
+
+  <script>
+    document.getElementById("form-noticia").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const formData = new FormData();
+      formData.append("titulo", document.getElementById("titulo").value);
+      formData.append("conteudo", document.getElementById("conteudo").value);
+      formData.append("imagem", document.getElementById("imagem").files[0]);
+
+      fetch("http://localhost:3000/noticias", {
+        method: "POST",
+        credentials: "include",
+        body: formData
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Erro ao adicionar notícia.");
+        }
+        return response.json();
+      })
+      .then(data => {
+        document.getElementById("mensagem").textContent = "Notícia adicionada com sucesso!";
+        document.getElementById("form-noticia").reset();
+      })
+      .catch(error => {
+        document.getElementById("mensagem").textContent = "Erro ao adicionar notícia.";
+        console.error(error);
+      });
+    });
+  </script>
+</body>
+</html>
